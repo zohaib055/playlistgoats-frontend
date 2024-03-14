@@ -318,7 +318,7 @@ export default class Search extends Component {
               <div className="search-buttons text-center mt-4">
 
               <div class="alert alert-info">
-                <strong>Quick Tip!</strong> Check Playlist stats before asking for placement to make sure it's <strong>Bot-Free</strong>.
+                 Quick Tip: Check playlist stats before asking for placements to make sure it's Bot-Free ✅
               </div>
               
 
