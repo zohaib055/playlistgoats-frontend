@@ -7,8 +7,8 @@ const Config = {
         "SOCKET_URL" : "http://localhost:3500/"
     },
     "production" : {
-        "API_URL" : "https://api.playlistgoats.com",
-        "SOCKET_URL" : "https://api.playlistgoats.com/"
+        "API_URL" : "https://app.playlistgoats.com/api",
+        "SOCKET_URL" : "https://app.playlistgoats.com/"
     }
 }
 

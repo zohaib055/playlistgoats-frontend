@@ -75,7 +75,7 @@ export default class Search extends Component {
       loading: false,
       socket: socketio.connect(SOCKET_URL, {
         transports: ['polling', 'websocket'],
-        path: '/socket/',
+        path: '/api/socket/',
         upgrade: false,
         reconnect: false,
         cors: {
