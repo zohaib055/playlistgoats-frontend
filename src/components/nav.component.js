@@ -154,7 +154,7 @@ export default class Nav extends Component {
                   this.state.activeSubscription &&
                   <a
                     class='nav-link'
-                    href='/playlist/analyzer'
+                    href='/bot/checker'
                     role='button'
                   >
                     <div class='d-flex align-items-center'>
@@ -163,7 +163,7 @@ export default class Nav extends Component {
                           <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
                       </span>
-                      <span class='nav-link-text ps-1'>Playlist Analyzer</span>
+                      <span class='nav-link-text ps-1'>Bot Checker</span>
                     </div>
                   </a>
                 }

@@ -200,3 +200,9 @@
 .white, .white a {
   color: #fff;
 }
+
+@media screen and (max-width: 1000px) {
+  .playlist-url {
+    width: 527px;
+  }
+}

@@ -52,6 +52,7 @@ class App extends Component {
                     <Route exact path="/playlist/analyzer" component={AnalyticsPage}/>
                     <Route exact path="/subscription" component={SubscriptionPage}/>
                     <Route exact path="/playlist/analyzer/:id" component={AnalyticsPage}/>
+                    <Route exact path="/bot/checker" component={AnalyticsPage}/>
 
 
 

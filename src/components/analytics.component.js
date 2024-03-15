@@ -75,27 +75,7 @@ const Analytics = (props) => {
         <div class="col">
           <div class="card bg-100 shadow-none border">
             <div class="row gx-0 flex-between-center">
-              <div class="col-sm-auto d-flex align-items-center">
-                <img
-                  class="ms-n2"
-                  src="/assets/img/illustrations/crm-bar-chart.png"
-                  alt=""
-                  width="90"
-                />
-                <div>
-                  <h6 class="text-primary fs--1 mb-0">Welcome to the</h6>
-                  <h4 class="text-primary fw-bold mb-0">
-                    Playlist SEARCH ENGINE &nbsp;
-                    <span class="text-info fw-medium">for Spotify Users</span>
-                  </h4>
-                </div>
-                <img
-                  class="ms-n4 d-md-none d-lg-block"
-                  src="/assets/img/illustrations/crm-line-chart.png"
-                  alt=""
-                  width="150"
-                />
-              </div>
+
             </div>
           </div>
 
@@ -103,20 +83,24 @@ const Analytics = (props) => {
             <div class="row">
               <div class="panel-heading mt-5 text-center mb-4">
                 {" "}
-                <h4>Spotify Playlist Analyzer</h4>
+                <h4>PlaylistGOATS Bot Detection System</h4>
                 <p class="white">
-                  Information and statistics about any Spotify playlist
+                  Access Comprehensive Spotify Playlist Data and Analytics for Informed Insights.
                 </p>
 
-              {props && props.playlist_id && (
+                {props && props.playlist_id && (
                 <>
-                  <div class="text-gray">
-                    <strong>Playlist Url:</strong>&nbsp;
-                    https://open.spotify.com/playlist/{props.playlist_id}
+                  <div class="text-gray playlist-url">
+                    <strong>Playlist URL:</strong>&nbsp;
+                    <a rel="noreferrer" al href={`https://open.spotify.com/playlist/${props.playlist_id}`} target="_blank">https://open.spotify.com/playlist/{props.playlist_id}</a>
                   </div>
                 </>
               )}
+
+              
               </div>
+
+              
               
 
 
@@ -128,10 +112,10 @@ const Analytics = (props) => {
               )}
 
               <div className="panel-body mb-6">
-                <p className="text-white">Enter Playlist ID</p>
 
                 {!props?.playlist_id && (
                   <>
+                    <p className="text-white">Enter Playlist ID</p>
                     <div class="search">
                       <input
                         type="text"
@@ -162,7 +146,7 @@ const Analytics = (props) => {
 
                 {loading && (
                   <span className="pt-4 loading-text">
-                    Please wait our system is fetching details ...{" "}
+                    One moment, our digital detectives are digging deep for the details! ...{" "}
                     <div class="spinner-border spinner-loader" role="status">
                       <span class="sr-only">Loading...</span>
                     </div>
@@ -219,8 +203,7 @@ const Analytics = (props) => {
                         role="alert"
                       >
                         <div>
-                          Our system found a few signals suggesting irregular
-                          behavior by this playlist's curator.
+                           Our system just called out a curator for doing the robot – but not in a good way! Based on the data it seems it’s botted. 
                         </div>
                       </div>
                     </>
@@ -231,8 +214,7 @@ const Analytics = (props) => {
                         role="alert"
                       >
                         <div>
-                          Our system algorithms suggesting this playlist is{" "}
-                          <strong>Bot-Free</strong>
+                          ✅ Bot-Free: Based on the data, we have no evidence to believe this playlist is botted.
                         </div>
                       </div>
                     </>

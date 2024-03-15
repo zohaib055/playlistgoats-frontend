@@ -175,6 +175,7 @@ export default class Search extends Component {
 
     var self = this;
     this.state.socket.on('playlist_data', function (data) {
+      console.log("=== Playlist Data ===");
       try {
         var msg = JSON.parse(
           data.replace(/^\s+|\s+$/g, '').replace(/\\"/g, '"')
@@ -186,7 +187,9 @@ export default class Search extends Component {
             playlists_data: [...self.state.playlists_data, msg],
           });
         }
-      } catch { }
+      } catch (error) {
+        console.log("ERROR: ",error);
+      }
     });
 
     this.state.socket.on('disconnect', function (data) {
