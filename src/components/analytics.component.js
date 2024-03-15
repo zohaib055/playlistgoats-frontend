@@ -146,7 +146,7 @@ const Analytics = (props) => {
 
                 {loading && (
                   <span className="pt-4 loading-text">
-                    One moment, our digital detectives are digging deep for the details! ...{" "}
+                    One moment, our digital detectives are digging deep for the details ...{" "}
                     <div class="spinner-border spinner-loader" role="status">
                       <span class="sr-only">Loading...</span>
                     </div>
