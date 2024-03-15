@@ -92,7 +92,7 @@ const Analytics = (props) => {
                 <>
                   <div class="text-gray playlist-url">
                     <strong>Playlist URL:</strong>&nbsp;
-                    <a rel="noreferrer" al href={`https://open.spotify.com/playlist/${props.playlist_id}`} target="_blank">https://open.spotify.com/playlist/{props.playlist_id}</a>
+                    <a rel="noreferrer" al href={`https://open.spotify.com/playlist/${props.playlist_id}`} target="_blank">https://open.spotify.com/p/{Math.random().toString(36).slice(2, 8)}</a>
                   </div>
                 </>
               )}
