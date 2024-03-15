@@ -251,13 +251,9 @@ const Analytics = (props) => {
                                 </td>
                                 <td>{artist.repeat_count}</td>
                                 <td>
-                                  <ProgressBar
-                                    completed={artist.popularity}
-                                    maxCompleted={100}
-                                    labelSize="10px"
-                                    labelClassName="label-css"
-                                    className="progress-wrapper"
-                                  />
+                                <span class="badge">
+                                  {artist.popularity}%
+                                </span>
                                 </td>
                                 <td>{artist?.listeners}</td>
                               </tr>
