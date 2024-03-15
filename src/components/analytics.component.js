@@ -189,9 +189,11 @@ const Analytics = (props) => {
                       <br /> <br />
                       <strong className="mt-3">Playlist Popularity:</strong>
                       <ProgressBar
-                        className="mt-3"
                         completed={data?.popularity}
                         maxCompleted={100}
+                        labelSize="10px"
+                        labelClassName="label-css"
+                        className="progress-wrapper mt-3"
                       />
                     </div>
                   </div>
