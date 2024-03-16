@@ -43,14 +43,25 @@ const Analytics = (props) => {
     const response = await SpotifyService.getAnalytics(playlist_id);
     const verify   = await SpotifyService.checkPlaylist(playlist_id);
 
-    console.log(verify.data);
+    console.log("verify: ",verify.data);
 
-    setBotted(verify?.data?.error ? true : verify?.data?.botted);
+    if(verify.data.error) {
+
+      const verify_1 = await SpotifyService.checkPlaylist(playlist_id);
+
+      console.log("verify_1 :",verify.data);
+
+      setBotted(verify_1?.data?.error ? true : verify_1?.data?.botted);
+
+    } else {
+      
+      setBotted(verify?.data?.error ? true : verify?.data?.botted);
+    }
   
-
-
     if (response.data?.error === true) {
+
       setError(true);
+
     } else {
       setData(response.data);
     }
