@@ -22,6 +22,9 @@ const Analytics = (props) => {
 
   const [error, setError] = useState(false);
 
+  const [botted, setBotted] = useState(false);
+
+
   const [loading, setLoading] = useState(null);
 
   const getStats = async () => {
@@ -38,6 +41,13 @@ const Analytics = (props) => {
     setLoading(true);
 
     const response = await SpotifyService.getAnalytics(playlist_id);
+    const verify   = await SpotifyService.checkPlaylist(playlist_id);
+
+    console.log(verify.data);
+
+    setBotted(verify?.data?.error ? true : verify?.data?.botted);
+  
+
 
     if (response.data?.error === true) {
       setError(true);
@@ -198,7 +208,7 @@ const Analytics = (props) => {
                     </div>
                   </div>
 
-                  {data?.botted ? (
+                  {botted ? (
                     <>
                       <div
                         className="mt-5 alert alert-danger d-flex align-items-center"

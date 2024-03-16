@@ -15,6 +15,13 @@ class SpotifyService {
         return data;
         
     }
+
+    async checkPlaylist(playlistId) {
+        let data = await axios.get(API_URL + `/playlist/verify?id=${playlistId}`, { headers: authHeader() }).catch(axiosErrorHandler)
+        return data;
+    }
+
+
     async getArtist(artist_id) {
         let data = await axios.get(API_URL + `/artist?artist_id=${artist_id}`, { headers: authHeader() }).catch(axiosErrorHandler)
         return data;
