@@ -20,6 +20,10 @@ const stripePromise = loadStripe(
   "pk_live_51Hh10CKbXv9EF1kkRtVp2h2Yx5xJn9l1IFMzSwspPvTDG9DlzzZknze0wOp3lJzgiOoJCRi9WO6yhKFzbCNhIVJj00RgRk4IDM"
 );
 
+// const stripePromise = loadStripe(
+//   "pk_test_51Hh10CKbXv9EF1kksnmf4t1Mv2Up8y9Lb8LYezhFl7f21dNYbN5NdEGma2aH71exDEBKbbasZvtgFonQwXKCzQHw00xHKC2IFG"
+// );
+
 const CheckoutForm = () => {
   const [cardNumberError, setCardNumberError] = useState(false);
   const [cardNumberErrorMessage, setCardNumberErrorMessage] = useState(null);
@@ -144,19 +148,28 @@ const CheckoutForm = () => {
         password: password,
       };
 
-      console.log("Payload", payload);
-
       try {
-        await AuthService.signup(payload);
+        const resp = await AuthService.signup(payload);
 
-        setCompleted(true);
+        if(resp.data?.error) {
 
-        setSubmitting(false);
+           toast.error(resp.data?.message);
 
-        toast.success("Your PlaylistGoats subscription completed successfully!");
+           setSubmitting(false);
+
+
+        } else {
+
+          setSubmitting(false);
+
+          setCompleted(true);
+
+          toast.success("Your PlaylistGoats subscription completed successfully!");
+        }
 
 
       } catch (error) {
+        console.log(error);
         toast.error(error.message);
       }
     } else {
@@ -168,9 +181,11 @@ const CheckoutForm = () => {
   };
 
   useEffect(() => {
-    const sub = "price_1OzehqKbXv9EF1kkMt8js2Da";
-    setPlan(sub);
-  }, [plan]);
+    const currentUser = AuthService.getCurrentUser();
+        if (currentUser) {
+             window.location = "/"
+        }
+  }, []);
 
   const handleChange = async (e) => {
     await getToken();

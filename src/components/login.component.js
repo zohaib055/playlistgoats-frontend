@@ -74,8 +74,9 @@ export default class Login extends Component {
 
     componentWillMount() {
         const currentUser = AuthService.getCurrentUser();
-        // if (currentUser)
-            // this.setState({ redirect: "/" });
+        if (currentUser) {
+            this.setState({ redirect: "/" });
+        }
     }
 
     async getIpAddress() {
