@@ -160,7 +160,7 @@ const CheckoutForm = () => {
         toast.error(error.message);
       }
     } else {
-      toast.error("Please completed all the required fields.");
+      toast.error("Please complete all the required fields.");
       setSubmitting(false);
     }
 
